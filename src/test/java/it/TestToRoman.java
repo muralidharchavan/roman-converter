@@ -12,132 +12,99 @@ public class TestToRoman {
 
     @Test
     public void test_0() throws Exception {
-    	Response response = new Romanizer().toRoman("0");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("nulla", convertedData);
+    	assertEquals("nulla", new Romanizer().toRoman("0").readEntity(String.class));
     }
     
     @Test
     public void testNoValue() throws Exception {
-    	Response response = new Romanizer().toRoman("");
-    	assertEquals(400, response.getStatus());
+    	assertEquals(400, new Romanizer().toRoman("").getStatus());
     }
-
     
     @Test
     public void testNegative() throws Exception {
-    	Response response = new Romanizer().toRoman("-1");
-    	assertEquals(400, response.getStatus());
-    	response = new Romanizer().toRoman("-99");
-    	assertEquals(400, response.getStatus());
+    	assertEquals(400, new Romanizer().toRoman("-1").getStatus());
+    	assertEquals(400, new Romanizer().toRoman("-99").getStatus());
     }
     
     @Test
     public void testGreaterThan3999() throws Exception {
-    	Response response = new Romanizer().toRoman("4000");
-    	assertEquals(400, response.getStatus());
+    	assertEquals(400, new Romanizer().toRoman("4000").getStatus());
     }
     
     @Test
     public void testFloat() throws Exception {
-    	Response response = new Romanizer().toRoman("2.5");
-    	assertEquals(400, response.getStatus());
+    	assertEquals(400, new Romanizer().toRoman("2.5").getStatus());
     }
     
     
     @Test
     public void test1() throws Exception {
-    	Response response = new Romanizer().toRoman("1");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("I", convertedData);
+    	assertEquals("I", new Romanizer().toRoman("1").readEntity(String.class));
     }
     
     @Test
     public void test2() throws Exception {
-    	Response response = new Romanizer().toRoman("2");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("II", convertedData);
+    	assertEquals("II", new Romanizer().toRoman("2").readEntity(String.class));
     } 
     
     @Test
     public void test3000() throws Exception {
-    	Response response = new Romanizer().toRoman("3000");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMM", convertedData);
+    	assertEquals("MMM", new Romanizer().toRoman("3000").readEntity(String.class));
     }
     	
     @Test
     public void test3500() throws Exception {
-    	Response response = new Romanizer().toRoman("3500");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMMD", convertedData);
+    	assertEquals("MMMD", new Romanizer().toRoman("3500").readEntity(String.class));
     }
 
     @Test
     public void test3700() throws Exception {
-    	Response response = new Romanizer().toRoman("3700");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMMDCC", convertedData);
+    	assertEquals("MMMDCC", new Romanizer().toRoman("3700").readEntity(String.class));
     }
 
     @Test
     public void test3900() throws Exception {
-    	Response response = new Romanizer().toRoman("3900");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMMCM", convertedData);
+    	assertEquals("MMMCM", new Romanizer().toRoman("3900").readEntity(String.class));
     }
 
     @Test
     public void test3999() throws Exception {
-    	Response response = new Romanizer().toRoman("3999");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMMCMXCIX", convertedData);
+    	assertEquals("MMMCMXCIX", new Romanizer().toRoman("3999").readEntity(String.class));
     }
 
     @Test
     public void test3861() throws Exception {
-    	Response response = new Romanizer().toRoman("3861");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMMDCCCLXI", convertedData);
+    	assertEquals("MMMDCCCLXI", new Romanizer().toRoman("3861").readEntity(String.class));
     }
     
     @Test
     public void test9() throws Exception {
-    	Response response = new Romanizer().toRoman("9");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("IX", convertedData);
+    	assertEquals("IX", new Romanizer().toRoman("9").readEntity(String.class));
     }
 
     @Test
     public void test19() throws Exception {
-    	Response response = new Romanizer().toRoman("19");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("XIX", convertedData);
+    	assertEquals("XIX", new Romanizer().toRoman("19").readEntity(String.class));
     }
 
     @Test
     public void test30() throws Exception {
-    	Response response = new Romanizer().toRoman("30");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("XXX", convertedData);
+    	assertEquals("XXX", new Romanizer().toRoman("30").readEntity(String.class));
     }
     
     @Test
     public void test49() throws Exception {
-    	Response response = new Romanizer().toRoman("49");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("XLIX", convertedData);
+    	assertEquals("XLIX", new Romanizer().toRoman("49").readEntity(String.class));
     }
     
     @Test
     public void test46() throws Exception {
-    	Response response = new Romanizer().toRoman("46");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("XLVI", convertedData);
+    	assertEquals("XLVI", new Romanizer().toRoman("46").readEntity(String.class));
     }
 
     @Test
     public void test79() throws Exception {
+    	assertEquals("LXXIX", new Romanizer().toRoman("79").readEntity(String.class));
     	Response response = new Romanizer().toRoman("79");
     	String convertedData = response.readEntity(String.class);
     	assertEquals("LXXIX", convertedData);
@@ -145,100 +112,72 @@ public class TestToRoman {
 
     @Test
     public void test0001() throws Exception {
-    	Response response = new Romanizer().toRoman("0001");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("I", convertedData);
+    	assertEquals("I", new Romanizer().toRoman("0001").readEntity(String.class));
     }
 
     @Test
     public void test99() throws Exception {
-    	Response response = new Romanizer().toRoman("99");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("XCIX", convertedData);
+    	assertEquals("XCIX", new Romanizer().toRoman("99").readEntity(String.class));
     }
 
     @Test
     public void test101() throws Exception {
-    	Response response = new Romanizer().toRoman("101");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CI", convertedData);
+    	assertEquals("CI", new Romanizer().toRoman("101").readEntity(String.class));
     }
 
     @Test
     public void test399() throws Exception {
-    	Response response = new Romanizer().toRoman("399");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CCCXCIX", convertedData);
+    	assertEquals("CCCXCIX", new Romanizer().toRoman("399").readEntity(String.class));
     }
 
     @Test
     public void test400() throws Exception {
-    	Response response = new Romanizer().toRoman("400");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CD", convertedData);
+    	assertEquals("CD", new Romanizer().toRoman("400").readEntity(String.class));
     }
 
     @Test
     public void test900() throws Exception {
-    	Response response = new Romanizer().toRoman("900");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CM", convertedData);
+    	assertEquals("CM", new Romanizer().toRoman("900").readEntity(String.class));
     }
 
     @Test
     public void test956() throws Exception {
-    	Response response = new Romanizer().toRoman("956");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CMLVI", convertedData);
+    	assertEquals("CMLVI", new Romanizer().toRoman("956").readEntity(String.class));
     }
 
     @Test
     public void test950() throws Exception {
-    	Response response = new Romanizer().toRoman("950");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CML", convertedData);
+    	assertEquals("CML", new Romanizer().toRoman("950").readEntity(String.class));
     }
     
     @Test
     public void test2899() throws Exception {
-    	Response response = new Romanizer().toRoman("2899");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MMDCCCXCIX", convertedData);
+    	assertEquals("MMDCCCXCIX", new Romanizer().toRoman("2899").readEntity(String.class));
     }
 
     @Test
     public void test1000() throws Exception {
-    	Response response = new Romanizer().toRoman("1000");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("M", convertedData);
+    	assertEquals("M", new Romanizer().toRoman("1000").readEntity(String.class));
     }
     
     @Test
     public void test1099() throws Exception {
-    	Response response = new Romanizer().toRoman("1099");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MXCIX", convertedData);
+    	assertEquals("MXCIX", new Romanizer().toRoman("1099").readEntity(String.class));
     }
 
     @Test
     public void test944() throws Exception {
-    	Response response = new Romanizer().toRoman("944");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("CMXLIV", convertedData);
+    	assertEquals("CMXLIV", new Romanizer().toRoman("944").readEntity(String.class));
     }
 
     @Test
     public void test1001() throws Exception {
-    	Response response = new Romanizer().toRoman("1001");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MI", convertedData);
+    	assertEquals("MI", new Romanizer().toRoman("1001").readEntity(String.class));
     }
     
     @Test
     public void test1400() throws Exception {
-    	Response response = new Romanizer().toRoman("1400");
-    	String convertedData = response.readEntity(String.class);
-    	assertEquals("MCD", convertedData);
+    	assertEquals("MCD", new Romanizer().toRoman("1400").readEntity(String.class));
     }
 
 
