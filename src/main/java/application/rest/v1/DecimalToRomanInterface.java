@@ -23,7 +23,7 @@ public class DecimalToRomanInterface {
         DecimalToRomanImpl toRomanImpl = new DecimalToRomanImpl();
         String roman;
         try {
-            roman = toRomanImpl.toRoman(value);
+            roman = toRomanImpl.decimalToRoman(value);
         } catch (Exception e) {
             return responseBuilder.status(400).entity(e.getMessage()).build();
         }

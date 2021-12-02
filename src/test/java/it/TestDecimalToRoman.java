@@ -33,7 +33,7 @@ public class TestDecimalToRoman {
             for (String badCase : badCases) {
                 Exception thrown = assertThrows(
                         IllegalArgumentException.class,
-                        () -> new DecimalToRomanImpl().toRoman(badCase));
+                        () -> new DecimalToRomanImpl().decimalToRoman(badCase));
                 assertTrue(thrown.getMessage().contains("Bad Request"));
             }
         }
@@ -43,7 +43,7 @@ public class TestDecimalToRoman {
         public void testZero() {
             Exception thrown = assertThrows(
                     IllegalArgumentException.class,
-                    () -> new DecimalToRomanImpl().toRoman("0"));
+                    () -> new DecimalToRomanImpl().decimalToRoman("0"));
             assertTrue(thrown.getMessage().contains("nulla"));
         }
 
@@ -69,7 +69,7 @@ public class TestDecimalToRoman {
         @Test
         public void test_success_cases() {
             for (String[] test : testData) {
-                assertEquals(test[1], toRomanImpl.toRoman(test[0]));
+                assertEquals(test[1], toRomanImpl.decimalToRoman(test[0]));
             }
         }
     }

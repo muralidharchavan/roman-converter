@@ -3,11 +3,11 @@ package application.impl.numbertoroman;
 public class DecimalToRomanImpl {
 
     public static void main(String[] args) {
-        String resp = new DecimalToRomanImpl().toRoman("4000");
+        String resp = new DecimalToRomanImpl().decimalToRoman("4000");
         System.out.println(resp);
     }
 
-    public String toRoman(String value) {
+    public String decimalToRoman(String value) {
         String roman = "";
         value = new DecimalNumberValidator().validate(value);
 
