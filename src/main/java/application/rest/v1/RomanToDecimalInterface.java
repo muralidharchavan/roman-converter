@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 @Path("to-number")
-public class Numberizer {
+public class RomanToDecimalInterface {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
