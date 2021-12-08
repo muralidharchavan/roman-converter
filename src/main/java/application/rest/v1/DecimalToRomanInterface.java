@@ -20,10 +20,9 @@ public class DecimalToRomanInterface {
         ResponseBuilder responseBuilder = Response.noContent();
         responseBuilder.header("Content-Type", "text/plain");
 
-        DecimalToRomanImpl toRomanImpl = new DecimalToRomanImpl();
         String roman;
         try {
-            roman = toRomanImpl.decimalToRoman(value);
+            roman = DecimalToRomanImpl.decimalToRoman(value);
         } catch (Exception e) {
             return responseBuilder.status(400).entity(e.getMessage()).build();
         }

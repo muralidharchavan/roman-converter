@@ -2,9 +2,9 @@ package application.impl.romantonumber;
 
 public class RomanToDecimalImpl {
 
-    public String toNumber(String romanNumber) throws Exception {
+    public static String toNumber(String romanNumber) throws Exception {
 
-        romanNumber = new RomanNumberValidator().validate(romanNumber);
+        romanNumber = RomanNumberValidator.validate(romanNumber);
 
         int decimalNumber = 0;
 
@@ -27,7 +27,7 @@ public class RomanToDecimalImpl {
         return decimalNumber + "";
     }
 
-    private int getValue(char romanLiteral) throws Exception {
+    private static int getValue(char romanLiteral) throws Exception {
         if (romanLiteral == 'I')
             return 1;
         if (romanLiteral == 'V')

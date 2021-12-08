@@ -1,7 +1,7 @@
 package application.impl.romantonumber;
 
 public class RomanNumberValidator {
-    public String validate(String romanNumber) {
+    public static String validate(String romanNumber) {
         if (romanNumber == null) {
             throw new IllegalArgumentException("Bad Request");
         }

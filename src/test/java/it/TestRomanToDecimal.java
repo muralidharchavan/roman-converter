@@ -32,7 +32,7 @@ public class TestRomanToDecimal {
 
                 Exception thrown = assertThrows(
                         IllegalArgumentException.class,
-                        () -> new RomanToDecimalImpl().toNumber(badCase));
+                        () -> RomanToDecimalImpl.toNumber(badCase));
 
                 assertTrue(thrown.getMessage().contains("Bad Request"));
             }
@@ -58,7 +58,7 @@ public class TestRomanToDecimal {
                     { "M", "1000" }
             };
             for (String basicCase[] : basicCases) {
-                assertEquals(basicCase[1], new RomanToDecimalImpl().toNumber(basicCase[0]));
+                assertEquals(basicCase[1], RomanToDecimalImpl.toNumber(basicCase[0]));
             }
         }
 
@@ -84,7 +84,7 @@ public class TestRomanToDecimal {
                     { "MMMCMXCIX", "3999" }
             };
             for (String nonBasicCase[] : nonBasicCases) {
-                assertEquals(nonBasicCase[1], new RomanToDecimalImpl().toNumber(nonBasicCase[0]));
+                assertEquals(nonBasicCase[1], RomanToDecimalImpl.toNumber(nonBasicCase[0]));
             }
         }
 
